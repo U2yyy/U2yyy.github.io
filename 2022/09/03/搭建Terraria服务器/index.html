@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://s1.ax1x.com/2022/09/03/vorfaD.md.png">
 <meta property="og:image" content="https://s1.ax1x.com/2022/09/03/vorhIe.md.png">
 <meta property="article:published_time" content="2022-09-03T13:53:43.000Z">
-<meta property="article:modified_time" content="2022-09-03T13:56:08.757Z">
+<meta property="article:modified_time" content="2022-09-03T13:58:18.923Z">
 <meta property="article:author" content="U2y">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://img2020.cnblogs.com/blog/1663270/202007/1663270-20200729135637755-167658670.png">
@@ -184,7 +184,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-09-03 21:53:43 / 修改时间：21:56:08" itemprop="dateCreated datePublished" datetime="2022-09-03T21:53:43+08:00">2022-09-03</time>
+              <time title="创建时间：2022-09-03 21:53:43 / 修改时间：21:58:18" itemprop="dateCreated datePublished" datetime="2022-09-03T21:53:43+08:00">2022-09-03</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -258,7 +258,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/root/swapfile swap swap defaults 0 0</span><br></pre></td></tr></table></figure>
 
 <p>然后使用<code>reboot</code>命令或者其它办法重启实例即可，使用<code>free -m</code>查看<code>Swap</code>分区是否已经被分配内存了，然后决定是否进入下一步</p>
-<h3 id="❤下载配置相关文件"><a href="#❤下载配置相关文件" class="headerlink" title="❤下载配置相关文件"></a>❤下载配置相关文件</h3><blockquote>
+<h3 id="🎨下载配置相关文件"><a href="#🎨下载配置相关文件" class="headerlink" title="🎨下载配置相关文件"></a>🎨下载配置相关文件</h3><blockquote>
 <p>在opt目录下创建<code>Terraria</code>文件夹，并在该文件夹下创建<code>bin,worlds,zip</code>三个子文件夹</p>
 </blockquote>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">mkdir</span> /opt/terraria</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">mkdir</span> /opt/terraria/&#123;bin,worlds,zip&#125;</span></span><br></pre></td></tr></table></figure>
@@ -404,7 +404,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9E%B6%E8%AE%BETerraria%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">架设Terraria服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%8E%AD%E7%9B%B4%E6%8E%A5%E4%BB%8EVPS%E5%85%A5%E6%89%8B"><span class="nav-number">1.1.</span> <span class="nav-text">🎭直接从VPS入手</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%A7%80%E5%88%9B%E5%BB%BASwap%E5%88%86%E5%8C%BA"><span class="nav-number">1.1.1.</span> <span class="nav-text">🧀创建Swap分区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E4%B8%8B%E8%BD%BD%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3%E6%96%87%E4%BB%B6"><span class="nav-number">1.1.2.</span> <span class="nav-text">❤下载配置相关文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9C%8C%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">1.1.3.</span> <span class="nav-text">✌启动服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8D%9F%E5%B0%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%8C%82%E8%B5%B7"><span class="nav-number">1.1.4.</span> <span class="nav-text">🍟将服务器挂起</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9B%93%E4%BD%BF%E7%94%A8%E5%AE%89%E5%85%A8%E7%BB%84%E7%AD%96%E7%95%A5%E9%98%B2%E6%AD%A2%E7%AB%AF%E5%8F%A3%E8%A2%AB%E6%8B%A6%E6%88%AA"><span class="nav-number">1.1.5.</span> <span class="nav-text">⛓使用安全组策略防止端口被拦截</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8E%B6%E5%90%8E%E8%AE%B0"><span class="nav-number">1.1.6.</span> <span class="nav-text">🎶后记</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9E%B6%E8%AE%BETerraria%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">架设Terraria服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%8E%AD%E7%9B%B4%E6%8E%A5%E4%BB%8EVPS%E5%85%A5%E6%89%8B"><span class="nav-number">1.1.</span> <span class="nav-text">🎭直接从VPS入手</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%A7%80%E5%88%9B%E5%BB%BASwap%E5%88%86%E5%8C%BA"><span class="nav-number">1.1.1.</span> <span class="nav-text">🧀创建Swap分区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8E%A8%E4%B8%8B%E8%BD%BD%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3%E6%96%87%E4%BB%B6"><span class="nav-number">1.1.2.</span> <span class="nav-text">🎨下载配置相关文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9C%8C%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">1.1.3.</span> <span class="nav-text">✌启动服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8D%9F%E5%B0%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%8C%82%E8%B5%B7"><span class="nav-number">1.1.4.</span> <span class="nav-text">🍟将服务器挂起</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9B%93%E4%BD%BF%E7%94%A8%E5%AE%89%E5%85%A8%E7%BB%84%E7%AD%96%E7%95%A5%E9%98%B2%E6%AD%A2%E7%AB%AF%E5%8F%A3%E8%A2%AB%E6%8B%A6%E6%88%AA"><span class="nav-number">1.1.5.</span> <span class="nav-text">⛓使用安全组策略防止端口被拦截</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8E%B6%E5%90%8E%E8%AE%B0"><span class="nav-number">1.1.6.</span> <span class="nav-text">🎶后记</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
