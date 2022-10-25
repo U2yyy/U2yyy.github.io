@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: U2y的个人博客
+title: U2y's blog
 subtitle: ''
-description: '技术博客，也用来分享一些杂七杂八的东西'
-keywords: "技术博客 博客 BLOG "
+description: 'Personal blog of U2y'
+keywords:
 author: U2y
 language: zh-CN
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://u2yyy.github.io/
+url: https://U2yyy.github.io
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -97,9 +97,11 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: kratos-rebirth
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repo: git@github.com:U2yyy/U2yyy.github.io.git
+  branch: main
