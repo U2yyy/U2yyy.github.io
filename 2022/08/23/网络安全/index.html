@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"u2yyy.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="网络安全这块算是我听得最深的一块，感触也很深，讲师讲课节奏也把控的很好">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络安全">
+<meta property="og:url" content="https://u2yyy.github.io/2022/08/23/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/index.html">
+<meta property="og:site_name" content="U2y&#39;s blog">
+<meta property="og:description" content="网络安全这块算是我听得最深的一块，感触也很深，讲师讲课节奏也把控的很好">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-08-23T04:05:59.000Z">
+<meta property="article:modified_time" content="2025-07-24T01:56:01.737Z">
+<meta property="article:author" content="U2y">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://u2yyy.github.io/2022/08/23/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>网络安全 | U2y's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">U2y's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://u2yyy.github.io/2022/08/23/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="U2y">
+      <meta itemprop="description" content="Personal blog of U2y">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="U2y's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          网络安全
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-08-23 12:05:59" itemprop="dateCreated datePublished" datetime="2022-08-23T12:05:59+08:00">2022-08-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-07-24 09:56:01" itemprop="dateModified" datetime="2025-07-24T09:56:01+08:00">2025-07-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%92%E8%AE%AD%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">青训笔记</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>网络安全这块算是我听得最深的一块，感触也很深，讲师讲课节奏也把控的很好</p>
+<span id="more"></span>
+<blockquote>
+<p><strong>这是我参与「第四届青训营 」笔记创作活动的的第8天</strong></p>
+</blockquote>
+<p>今天这节主讲网络安全的课着实让人听的酣畅淋漓，讲师用攻击人和防御者两人的角度讲了网络安全的重要性。攻防算是各有千秋，譬如HTTPS的CA加密看似非常安全，但黑客们还是能想出来暴力破解的算法，这种道高一尺魔高一丈的感觉显得非常激烈，而网络安全的历史也就是在白客与黑客的攻防中进行发展的。</p>
+<h2 id="黑客们"><a href="#黑客们" class="headerlink" title="黑客们"></a>黑客们</h2><blockquote>
+<p>XSS(Cross-Site Scripting)跨站脚本攻击</p>
+</blockquote>
+<p>黑客们利用网站漏洞将脚本注入到页面中，然后就可以执行黑客想要的操作了。如果开发者不对用户输入的内容进行任何排查就插入到DOM之中，就会给这种攻击极大的可乘之机。</p>
+<p><strong>危害</strong>：</p>
+<ul>
+<li>难以从UI上感知</li>
+<li>可以窃取用户的信息(cookie等)</li>
+<li>可以生成恶意表单让用户填写</li>
+</ul>
+<p><strong>XSS攻击的种类</strong>：</p>
+<ul>
+<li>Stored XSS：恶意脚本存在数据库中，危害极大，对所有用户都有影响</li>
+<li>Reflected XSS：从URL上进行攻击，是从服务端注入的脚本</li>
+<li>DOM-based XSS：完全由浏览器端发起并执行攻击</li>
+<li>Mutation-based XSS：根据浏览器渲染DOM的方式不同，有不一样的效果，是一种难以察觉的攻击方式</li>
+</ul>
+<hr>
+<blockquote>
+<p>CSRF(Cross-site request forgery)跨站伪造请求</p>
+</blockquote>
+<p>跨站伪造请求是在用户不知情的前提下利用用户的cookie构造指定的HTTP请求，从而达到黑客想要的操作。这种攻击方式对用户的财产损失的威胁很大，话说Steam盗取游戏饰品应该就有类似的攻击操作吧。</p>
+<hr>
+<blockquote>
+<p>Injection 注入</p>
+</blockquote>
+<ul>
+<li>SQL Injection：如果没有对语句进行任何检测就将其以字符串的方式拼接成SQL语句并执行，那么是非常危险的，黑客们甚至可以利用这个漏洞删除数据库中的所有数据。</li>
+<li>OS command：如果不对语句进行检测的话，如果黑客们传入一个rm -rf类似的语句就会造成无法挽回的后果。</li>
+</ul>
+<hr>
+<blockquote>
+<p>DOS（Denial of Service)攻击</p>
+</blockquote>
+<p>DoS攻击并不侵入目标服务器或目标网络设备，而是直接通过正则表达式的贪婪匹配等方式耗尽被攻击对象的资源，目的是让目标计算机或网络无法提供正常的服务或资源访问，使目标系统服务系统停止响应甚至崩溃。</p>
+<hr>
+<blockquote>
+<p>DDOS攻击</p>
+</blockquote>
+<p>即简单粗暴地用大量来自僵尸设备的请求让服务器无法负载，使其资源耗尽进而实现雪崩效应，无法响应新的请求。</p>
+<hr>
+<blockquote>
+<p>中间人攻击</p>
+</blockquote>
+<p>如果服务端和客户端之间的传输方式是明文传输，并且信息篡改不可知，且双方身份无法得到验证时，这就给中间人提供了巨大的漏洞。中间人可以隐匿地在服务端和客户端之间经手双方传输的数据，而服务端和客户端都以为是在和对方进行直接传输，这样黑客作为中间人就能窃取用户数据甚至伪造用户请求，造成财产损失等严重安全问题。</p>
+<hr>
+<h2 id="白客们"><a href="#白客们" class="headerlink" title="白客们"></a>白客们</h2><blockquote>
+<p>如何防范XSS攻击</p>
+</blockquote>
+<p>有两个重要原则，其实广泛适用于所有的网络安全领域：</p>
+<ol>
+<li>永远不要相信用户的提交内容</li>
+<li>永远不要直接将用户的提交内容直接转换为DOM</li>
+</ol>
+<p>XSS攻击在现在已经有比较完善的防御机制，无论是浏览器还是服务端（如Node）都有相应的防御体系，白客们并不需要对此过多操心，前人已经造好了轮子。</p>
+<p>当然，如果将用户输入的内容转换成DOM是必须的，那么一定要对用户输入的语句进行检测，防止其中含有恶意脚本。</p>
+<hr>
+<blockquote>
+<p>如何防范CSRF攻击</p>
+</blockquote>
+<p>CSP策略(Content Security Policy):同源策略，即针对HTTP请求，当同源时可以进行放行，当不同源时就进行拒绝。并且CSP可以让白客们定义哪些域是安全的，针对没有进入白名单的脚本就拒绝执行。</p>
+<p>对于Cookie这种携带重要信息的东西，白客们要决定什么时候允许携带，而什么时候不允许携带。</p>
+<p>对于CSRF攻击的防范是比较复杂的，总的来说就是要让开发者判断并且定义哪些请求合法，而哪些请求是不合法的，这需要大量的网络安全知识。</p>
+<hr>
+<blockquote>
+<p>如何防范Injection攻击</p>
+</blockquote>
+<p>使用prepared statement等方式提前编译，防止注入。坚持最小权限原则，一定不能放行sudo权限。同时还要对各种权限进行限制，防止用户使用SQL语句越界。</p>
+<hr>
+<blockquote>
+<p>如何防范DOS攻击</p>
+</blockquote>
+<p>拒绝使用用户提供的正则表达式，并且对白客们自己写的正则表达式进行性能测试，防止服务器资源倾斜。</p>
+<hr>
+<blockquote>
+<p>如何防范DDOS攻击</p>
+</blockquote>
+<p><strong>两大策略</strong>：</p>
+<ul>
+<li>过滤：对于流量进行过滤操作。我经常访问一些网站在访问前要用CloudFlare进行检测后才能进行放行，应该大概率就是对我目前流量的一个检测，防止发起DDOS攻击。</li>
+<li>抗量：即服务器收到大量请求时，进行扩容等操作，使服务器能扛下来用户的请求，这种方式可能就要消耗比较大的财力了。</li>
+</ul>
+<hr>
+<blockquote>
+<p>如何防范中间人攻击</p>
+</blockquote>
+<p>目前中间人攻击应该已经比较难行得通了，因为HTTPS几乎已经普及到所有常用的网站上了。HTTPS协议是加密的协议，并且能对双方的身份进行验证，还能对数据进行校验，判断数据是否被篡改。HTTPS协议是利用了数学的魔力，对数据用私钥加密后，用公钥能进行验证操作。不过这就需要CA(证书机构)进行颁发证书操作，其实也就是内置了不同的私钥和私钥算法，并且浏览器预先内置好各大CA的公钥，便于进行HTTPS传输操作。</p>
+<p>除非私钥算法被破解，否则中间人攻击是很难以实现的。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/08/23/%E5%89%8D%E7%AB%AF%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="prev" title="前端设计模式">
+      <i class="fa fa-chevron-left"></i> 前端设计模式
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/08/27/%E7%BA%AA%E5%BF%B5%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%BA%BF%E4%B8%8A%E5%90%88%E4%BD%9C%E9%A1%B9%E7%9B%AE%E7%94%B1%E8%B8%8C%E8%BA%87%E6%BB%A1%E5%BF%97%E5%88%B0%E6%9A%B4%E6%AD%BB/" rel="next" title="纪念第一次线上合作项目由踌躇满志到暴死">
+      纪念第一次线上合作项目由踌躇满志到暴死 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%BB%91%E5%AE%A2%E4%BB%AC"><span class="nav-number">1.</span> <span class="nav-text">黑客们</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%99%BD%E5%AE%A2%E4%BB%AC"><span class="nav-number">2.</span> <span class="nav-text">白客们</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">U2y</p>
+  <div class="site-description" itemprop="description">Personal blog of U2y</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">U2y</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

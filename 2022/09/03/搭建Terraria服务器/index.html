@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"u2yyy.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="架设Terraria服务器如何搭建一个Terraria服务器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搭建Terraria服务器">
+<meta property="og:url" content="https://u2yyy.github.io/2022/09/03/%E6%90%AD%E5%BB%BATerraria%E6%9C%8D%E5%8A%A1%E5%99%A8/index.html">
+<meta property="og:site_name" content="U2y&#39;s blog">
+<meta property="og:description" content="架设Terraria服务器如何搭建一个Terraria服务器">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/09/03/svAlJLpSE6tqOKP.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/09/03/vorcKx.md.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/09/03/vorfaD.md.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/09/03/vorhIe.md.png">
+<meta property="article:published_time" content="2022-09-03T13:53:43.000Z">
+<meta property="article:modified_time" content="2025-07-24T01:56:01.736Z">
+<meta property="article:author" content="U2y">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/09/03/svAlJLpSE6tqOKP.png">
+
+<link rel="canonical" href="https://u2yyy.github.io/2022/09/03/%E6%90%AD%E5%BB%BATerraria%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>搭建Terraria服务器 | U2y's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">U2y's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://u2yyy.github.io/2022/09/03/%E6%90%AD%E5%BB%BATerraria%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="U2y">
+      <meta itemprop="description" content="Personal blog of U2y">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="U2y's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          搭建Terraria服务器
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-09-03 21:53:43" itemprop="dateCreated datePublished" datetime="2022-09-03T21:53:43+08:00">2022-09-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-07-24 09:56:01" itemprop="dateModified" datetime="2025-07-24T09:56:01+08:00">2025-07-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="index"><span itemprop="name">个人博客</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="架设Terraria服务器"><a href="#架设Terraria服务器" class="headerlink" title="架设Terraria服务器"></a>架设Terraria服务器</h1><p>如何搭建一个Terraria服务器</p>
+<span id="more"></span>
+<blockquote>
+<p>今天有朋友找我咨询Terraria联机的事情，之前我们一起玩的时候都是我做主机，用内网穿透的方式让大家连接上服务器，体验还算不错，但我一直有搭一个公共服务器的想法。正好他现在需要一个服务器，我手头上又又有一个空闲的VPS可以用，于是说干就干，再加上我有那么一丁点儿的Linux终端语言基础，我直接开始Google教程，准备一步步地来搭建Terraria的服务器。</p>
+</blockquote>
+<p>在搜索过程中，我看到一篇文章对小白非常友好，但又不是那么友好。</p>
+<p>为什么说友好呢，因为文章从选购VPS开始，细微到Vim的使用都有讲解；但为什么说不友好呢，因为不知道是文章本身的排版有问题，还是文章转载后排版错乱了，很多代码有格式错误，并且有些命令的使用讲的比较摸棱两可，因此我想就着这篇教程把代码更新一下。</p>
+<h2 id="🎭直接从VPS入手"><a href="#🎭直接从VPS入手" class="headerlink" title="🎭直接从VPS入手"></a>🎭直接从VPS入手</h2><blockquote>
+<p>能摸索到这一步应该已经不是什么电脑小白了，因此我觉得原文里面的关于VPS的选择和介绍可以略过，甚至PUTTY的基本操作和Linux命令行的基本操作都是前置知识，我认为没有必要再提及了</p>
+</blockquote>
+<h3 id="🧀创建Swap分区"><a href="#🧀创建Swap分区" class="headerlink" title="🧀创建Swap分区"></a>🧀创建Swap分区</h3><p>这一步的目的似乎是给内存一个缓冲空间，因为购买的VPS一般性能比较低（学生党嘛，一般内存也就能买个1G2G的）。</p>
+<blockquote>
+<p>使用命令查看Swap分区</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">free -m</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>正常情况下应当是下图这样，swap分区空间为0</p>
+</blockquote>
+<p><img src="https://s2.loli.net/2022/09/03/svAlJLpSE6tqOKP.png" alt="1663270-20200729135637755-167658670.png"></p>
+<blockquote>
+<p>删除原来的分区</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">swapoff –a</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>新建一个读写块大小为1M、块个数为1024的Swap分区（这里不一定要这么多，具体多少可以自己指定)</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">dd</span> <span class="keyword">if</span>=/dev/zero of=/root/swapfile bs=1M count=1024</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>格式化创建好的Swap交换分区</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">mkswap /root/swapfile</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>启动新建的Swap交换分区</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">swapon /root/swapfile</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>下面是给Swap交换分区添加到开机自启动挂载，可能步骤稍多</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">vim /etc/fstab</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>进入文档后，进入编辑模式，然后加入一行代码</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/root/swapfile swap swap defaults 0 0</span><br></pre></td></tr></table></figure>
+
+<p>然后使用<code>reboot</code>命令或者其它办法重启实例即可，使用<code>free -m</code>查看<code>Swap</code>分区是否已经被分配内存了，然后决定是否进入下一步</p>
+<h3 id="🎨下载配置相关文件"><a href="#🎨下载配置相关文件" class="headerlink" title="🎨下载配置相关文件"></a>🎨下载配置相关文件</h3><blockquote>
+<p>在opt目录下创建<code>Terraria</code>文件夹，并在该文件夹下创建<code>bin,worlds,zip</code>三个子文件夹</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">mkdir</span> /opt/terraria</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">mkdir</span> /opt/terraria/&#123;bin,worlds,zip&#125;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>进入<code>zip</code>文件夹，下载官方提供的服务器包</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cd</span> /opt/terraria/zip</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">wget https://terraria.org/api/download/pc-dedicated-server/terraria-server-&#123;&#123;这里是版本号，要随着游戏版本更新而变&#125;&#125;.zip</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>将下载好的文件解压到<code>bin</code>文件夹中</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">unzip terraria-server-&#123;&#123;你下载的版本号&#125;&#125;.zip -d/opt/terraria/bin</span></span><br></pre></td></tr></table></figure>
+
+<p>这里解压完之后可以把<code>zip</code>文件夹里面的压缩文件删除掉，不过你也可以不删除</p>
+<blockquote>
+<p>将配置文件拷贝到泰拉瑞亚文件夹的根目录</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cp</span> -p /opt/terraria/bin/&#123;&#123;你的版本号&#125;&#125;/Windows/serverconfig.txt /opt/terraria/</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>编辑配置文档</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">vim /opt/terraria/serverconfig.txt</span></span><br></pre></td></tr></table></figure>
+
+<p>如果你的世界名字等需要用到中文，那么这里很可能需要改变文档的编码方式，不要进入编辑模式，手打这串字符并回车，没有出现红色警告则成功</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">: set fileencoding=utf-8</span><br></pre></td></tr></table></figure>
+
+<p>在文档的最后一段复制以下代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">world=/opt/terraria/Worlds/&#123;&#123;世界的名字&#125;&#125;.wld</span><br><span class="line">worldname=&#123;&#123;世界的名字&#125;&#125;</span><br><span class="line">difficulty=0</span><br><span class="line">autocreate=2</span><br><span class="line">maxplayers=4</span><br><span class="line">password=&#123;&#123;设定的密码&#125;&#125;</span><br><span class="line">worldpath=/opt/terraria/worlds</span><br></pre></td></tr></table></figure>
+
+<p><code>difficulty</code> 是游戏的难度，对应的是0为普通，1为专家，如difficulty&#x3D;0是普通模式</p>
+<p><code>autocreate </code>是自动生成的世界的大小，1是小世界，2是大世界，3是超大世界</p>
+<p><code>maxplayers</code>是最大同时游戏人数</p>
+<h3 id="✌启动服务器"><a href="#✌启动服务器" class="headerlink" title="✌启动服务器"></a>✌启动服务器</h3><blockquote>
+<p>使用下列命令赋予文件可执行权限</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">chmod</span> 777 /opt/terraria/bin/&#123;&#123;你的版本号&#125;&#125;/Linux/TerrariaServer.bin.x86_64</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>启动服务器</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cd</span> /opt/terraria/bin/&#123;&#123;你的版本号&#125;&#125;/Linux&amp;&amp; ./TerrariaServer.bin.x86_64 -config/opt/terraria/serverconfig.txt</span></span><br></pre></td></tr></table></figure>
+
+<p>原文章在这里还退出了去修改原配置文件，我修改了之后出现了编码错误，因此这里就暂且不提了，服务器维护的相关指令和内容可以自行查询相关文档或者是去Google查找</p>
+<h3 id="🍟将服务器挂起"><a href="#🍟将服务器挂起" class="headerlink" title="🍟将服务器挂起"></a>🍟将服务器挂起</h3><blockquote>
+<p>使用screen服务将服务器挂起，从而可以关闭PUTTY之后也能让服务器跑起来</p>
+<p>首先创建该窗口</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">screen -S terraria</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>创建后会直接进入该窗口，然后我们直接启动服务器即可</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cd</span> /opt/terraria/bin/&#123;&#123;你的版本号&#125;&#125;/Linux&amp;&amp; ./TerrariaServer.bin.x86_64 -config/opt/terraria/serverconfig.txt</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="⛓使用安全组策略防止端口被拦截"><a href="#⛓使用安全组策略防止端口被拦截" class="headerlink" title="⛓使用安全组策略防止端口被拦截"></a>⛓使用安全组策略防止端口被拦截</h3><p>这算是一个小坑，国内的三大VPS提供商应该都会提供一个安全组策略，设置了端口白名单。Terraria的Server启动端口默认是7777，这个端口应该是被安全组策略封锁的，因此需要手动去解除。</p>
+<blockquote>
+<p>这里以阿里云为例</p>
+<p>进入安全组并配置策略</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/vorcKx"><img src="https://s1.ax1x.com/2022/09/03/vorcKx.md.png" alt="vorcKx.md.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/vorfaD"><img src="https://s1.ax1x.com/2022/09/03/vorfaD.md.png" alt="vorfaD.md.png"></a></p>
+<blockquote>
+<p>将7777端口设置为白名单</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/vorhIe"><img src="https://s1.ax1x.com/2022/09/03/vorhIe.md.png" alt="vorhIe.md.png"></a></p>
+<h3 id="🎶后记"><a href="#🎶后记" class="headerlink" title="🎶后记"></a>🎶后记</h3><p>Terraria的更新速度可能有点快，这就意味着VPS持有者也要不断更新Server版本，确实是比较折磨的一件事，这只是最初级的配置教程，至于流程自动化，可能需要查阅更多资料后总结得出。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/08/27/%E7%BA%AA%E5%BF%B5%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%BA%BF%E4%B8%8A%E5%90%88%E4%BD%9C%E9%A1%B9%E7%9B%AE%E7%94%B1%E8%B8%8C%E8%BA%87%E6%BB%A1%E5%BF%97%E5%88%B0%E6%9A%B4%E6%AD%BB/" rel="prev" title="纪念第一次线上合作项目由踌躇满志到暴死">
+      <i class="fa fa-chevron-left"></i> 纪念第一次线上合作项目由踌躇满志到暴死
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/10/26/%E4%BB%BF%E7%BE%8A%E4%BA%86%E4%B8%AA%E7%BE%8A%E6%B8%B8%E6%88%8F/" rel="next" title="仿羊了个羊游戏">
+      仿羊了个羊游戏 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9E%B6%E8%AE%BETerraria%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">架设Terraria服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%8E%AD%E7%9B%B4%E6%8E%A5%E4%BB%8EVPS%E5%85%A5%E6%89%8B"><span class="nav-number">1.1.</span> <span class="nav-text">🎭直接从VPS入手</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%A7%80%E5%88%9B%E5%BB%BASwap%E5%88%86%E5%8C%BA"><span class="nav-number">1.1.1.</span> <span class="nav-text">🧀创建Swap分区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8E%A8%E4%B8%8B%E8%BD%BD%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3%E6%96%87%E4%BB%B6"><span class="nav-number">1.1.2.</span> <span class="nav-text">🎨下载配置相关文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9C%8C%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">1.1.3.</span> <span class="nav-text">✌启动服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8D%9F%E5%B0%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%8C%82%E8%B5%B7"><span class="nav-number">1.1.4.</span> <span class="nav-text">🍟将服务器挂起</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9B%93%E4%BD%BF%E7%94%A8%E5%AE%89%E5%85%A8%E7%BB%84%E7%AD%96%E7%95%A5%E9%98%B2%E6%AD%A2%E7%AB%AF%E5%8F%A3%E8%A2%AB%E6%8B%A6%E6%88%AA"><span class="nav-number">1.1.5.</span> <span class="nav-text">⛓使用安全组策略防止端口被拦截</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8E%B6%E5%90%8E%E8%AE%B0"><span class="nav-number">1.1.6.</span> <span class="nav-text">🎶后记</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">U2y</p>
+  <div class="site-description" itemprop="description">Personal blog of U2y</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">U2y</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

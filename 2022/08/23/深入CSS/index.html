@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"u2yyy.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="对CSS更为深入地理解，涉及盒模型等">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深入CSS">
+<meta property="og:url" content="https://u2yyy.github.io/2022/08/23/%E6%B7%B1%E5%85%A5CSS/index.html">
+<meta property="og:site_name" content="U2y&#39;s blog">
+<meta property="og:description" content="对CSS更为深入地理解，涉及盒模型等">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/089d5e928540497c8062dc60320d2003~tplv-k3u1fbpfcp-watermark.image">
+<meta property="og:image" content="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8c3c9201602c4013a271cc0280527360~tplv-k3u1fbpfcp-watermark.image">
+<meta property="og:image" content="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/72f52af5daae4298b4e511f786816d7b~tplv-k3u1fbpfcp-watermark.image">
+<meta property="og:image" content="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bb37b99872ff4ae78d409c83c5ed973d~tplv-k3u1fbpfcp-watermark.image">
+<meta property="og:image" content="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0eb5d35c71704dd1a20bc876160dbb74~tplv-k3u1fbpfcp-watermark.image">
+<meta property="og:image" content="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/579f98dd268a41c6ac79f228292f06b7~tplv-k3u1fbpfcp-watermark.image">
+<meta property="og:image" content="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b772af6de14845a39d95e23bee109b08~tplv-k3u1fbpfcp-watermark.image">
+<meta property="og:image" content="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e949868c6e22452681b17b011ec2b18a~tplv-k3u1fbpfcp-watermark.image">
+<meta property="article:published_time" content="2022-08-23T04:02:31.000Z">
+<meta property="article:modified_time" content="2025-07-24T01:56:01.736Z">
+<meta property="article:author" content="U2y">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/089d5e928540497c8062dc60320d2003~tplv-k3u1fbpfcp-watermark.image">
+
+<link rel="canonical" href="https://u2yyy.github.io/2022/08/23/%E6%B7%B1%E5%85%A5CSS/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>深入CSS | U2y's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">U2y's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://u2yyy.github.io/2022/08/23/%E6%B7%B1%E5%85%A5CSS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="U2y">
+      <meta itemprop="description" content="Personal blog of U2y">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="U2y's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          深入CSS
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-08-23 12:02:31" itemprop="dateCreated datePublished" datetime="2022-08-23T12:02:31+08:00">2022-08-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-07-24 09:56:01" itemprop="dateModified" datetime="2025-07-24T09:56:01+08:00">2025-07-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%92%E8%AE%AD%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">青训笔记</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>对CSS更为深入地理解，涉及盒模型等</p>
+<span id="more"></span>
+<blockquote>
+<p><strong>这是我参与「第四届青训营 」笔记创作活动的的第2天</strong></p>
+</blockquote>
+<ul>
+<li>晚上终于把深入CSS看完了，又获得了不少感触</li>
+</ul>
+<h2 id="选择器的优先次序"><a href="#选择器的优先次序" class="headerlink" title="选择器的优先次序"></a>选择器的优先次序</h2><p>选择器优先次序有如下两个规律：</p>
+<ul>
+<li><p>优先级关系：内联样式 &gt; ID 选择器 &gt; 类选择器 &#x3D; 属性选择器 &#x3D; 伪类选择器 &gt; 标签选择器 &#x3D; 伪元素选择器</p>
+</li>
+<li><p>计算选择符中 ID 选择器的个数（a），计算选择符中类选择器、属性选择器以及伪类选择器的个数之和（b），计算选择符中标签选择器和伪元素选择器的个数之和（c）。按 a、b、c 的顺序依次比较大小，大的则优先级高，相等则比较下一个。若最后两个的选择符中 a、b、c 都相等，则按照”就近原则”来判断</p>
+</li>
+</ul>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/089d5e928540497c8062dc60320d2003~tplv-k3u1fbpfcp-watermark.image" alt="屏幕截图 2022-07-25 234230.png"></p>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>即某些元素，如<code>&lt;strong&gt;</code>标签里面的元素，当没有显式地指定标签样式时，其会继承父类元素样式，例如继承<code>&lt;p&gt;</code>内的元素样式。当某些元素不能隐式继承父类元素样式时，可以通过<code>inherit</code>来显式继承费雷元素样式。当没有可以继承的值（当继承时会一层一层向上寻找可以继承的值），其会应用初始值。</p>
+<p>若要显式应用初始值，应使用<code>initial</code>关键字。</p>
+<h2 id="CSS渲染的流程"><a href="#CSS渲染的流程" class="headerlink" title="CSS渲染的流程"></a>CSS渲染的流程</h2><p>CSS渲染其实可以简单理解为以下几步：</p>
+<ol>
+<li>将DOM树和CSS样式规则合并为一个渲染树</li>
+<li>第二步根据讲师的图，拆分成了很多个步骤，但实际上就是根据每个节点值来计算几何信息，其中还需要考虑数据的合理性等，总之最后会生成实际值</li>
+<li>最后一步也就是把每个节点绘制到屏幕上</li>
+</ol>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8c3c9201602c4013a271cc0280527360~tplv-k3u1fbpfcp-watermark.image" alt="屏幕截图 2022-07-25 235606.png"></p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/72f52af5daae4298b4e511f786816d7b~tplv-k3u1fbpfcp-watermark.image" alt="屏幕截图 2022-07-25 235703.png"></p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bb37b99872ff4ae78d409c83c5ed973d~tplv-k3u1fbpfcp-watermark.image" alt="屏幕截图 2022-07-25 235721.png"></p>
+<h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><p>布局大概是我认为CSS最重要的内容之一了，布局的好坏直接影响了整个页面的直观性和美观性。好的布局能让人一目了然网站的用处，同时也知道自己如何去获取自己想要的东西。</p>
+<p>所有的HTML元素都可以视为盒子，它包含了：</p>
+<ul>
+<li><strong>Margin(外边距)</strong>  - 清除边框外的区域，外边距是透明的。可以调整距离。</li>
+<li><strong>Border(边框)</strong>  - 围绕在内边距和内容外的边框。可以调整样式。</li>
+<li><strong>Padding(内边距)</strong>  - 清除内容周围的区域，内边距是透明的。可以调整距离。</li>
+<li><strong>Content(内容)</strong>  - 盒子的内容，显示文本和图像。可以调整高度和宽度</li>
+</ul>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0eb5d35c71704dd1a20bc876160dbb74~tplv-k3u1fbpfcp-watermark.image" alt="屏幕截图 2022-07-26 000926.png"></p>
+<p>使用<code>margin:auto</code>可以实现水平居中的效果（left和right都设置成auto）。</p>
+<p>当文字超出盒子的大小时，可以使用<code>overflow</code>属性来改变超出部分的可浏览性。当设置为<code>visible</code>时，超出部分时直观可见的，但是这样不美观；当设置为<code>hidden</code>时，超出部分被全部隐藏，但是这样会造成可读性降低；因此最好是设置成<code>scroll</code>，这样读者可以滚动显示超出部分文字内容，既兼顾了盒模型的不变，又兼顾了文本的可读性。</p>
+<p>盒子包含了块级盒子和行级盒子，而HTML里的块级元素生成块级盒子，行级元素则生成行级元素。常见的块级元素即为<code>body</code>、<code>article</code>、<code>div</code>、<code>main</code>、<code>section</code>、<code>h1-h6</code>、<code>p</code>、<code>ul</code>、<code>ol</code>等；而常见的行级元素即为<code>span</code>、<code>em</code>、<code>strong</code>、<code>cite</code>、<code>code</code>等。</p>
+<p>块级（Block Level Box）不和其它盒子并列拜访，适用于所有的盒模型属性。</p>
+<p>行级（Inline Level Box）和其它行级盒子一起放在一行或拆分成多行，盒模型中的<code>width</code>和<code>height</code>属性不适用。</p>
+<p>盒模型的呈现使用<code>display</code>属性来体现：</p>
+<ul>
+<li><code>block</code>：块级盒子</li>
+<li><code>inline</code>：行级盒子</li>
+<li><code>inline-block</code>：本身是行级，可以放在行级中，也可以设置宽和高，但无法被拆分。这个概念其实也比较好理解，讲师用图片类比说明了这一概念，即：一行可以放多行图片，但是不可能把一张图片拆分成两块放在不同的地方去了</li>
+<li><code>none</code>：排版时完全忽略</li>
+</ul>
+<p>布局有三大方法：</p>
+<blockquote>
+<p>常规流</p>
+</blockquote>
+<p>只有根元素、浮动和绝对定位的元素会脱离常规流，其它元素都在常规流之内（in-flow），在常规流的盒子，会依照某种<strong>排版上下文</strong>完成布局</p>
+<ul>
+<li><p>行级排版上下文</p>
+<ul>
+<li>只包含行级盒子的盒子会创建一个IFC（Inline Formatting Context），其排版规则：<ul>
+<li>盒子在一行内水平摆放</li>
+<li>一行放不下时换行显示</li>
+<li><code>text-align</code>属性决定水平对齐</li>
+<li><code>vertical-align</code>属性决定垂直对齐</li>
+<li>避开浮动元素</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>块级排版上下文</p>
+<ul>
+<li>某些容器会创建一个BFC（Block Formatting Context），其排版规则：<ul>
+<li>盒子从上到下摆放</li>
+<li>垂直margin合并</li>
+<li>不会和浮动元素重叠</li>
+<li>BFC内盒子的margin不会和外部的合并</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>当行级元素里面包含块级元素等冲突时，CSS会帮我们生成两个匿名的盒子包围住行级盒子，从而实现正常排版。</p>
+<ul>
+<li>使用Flex Box（display：flex），一种新的排版上下文，实现自定义排版：<ul>
+<li>摆放流向</li>
+<li>摆放顺序</li>
+<li>盒子的高度和宽度</li>
+<li>水平和垂直方向的对齐</li>
+<li>是否允许折行</li>
+</ul>
+</li>
+</ul>
+<p>Flex Box拥有灵活的对齐方式。</p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/579f98dd268a41c6ac79f228292f06b7~tplv-k3u1fbpfcp-watermark.image" alt="屏幕截图 2022-07-26 005828.png"></p>
+<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b772af6de14845a39d95e23bee109b08~tplv-k3u1fbpfcp-watermark.image" alt="屏幕截图 2022-07-26 005840.png"></p>
+<ul>
+<li>Gred布局方式（display：gred）</li>
+</ul>
+<p>可以将Flex理解为一维的布局，而把Gred视为二维的布局。</p>
+<p>使用grid-template相关属性来将容器划分为网格，然后设置每个子项占哪些行&#x2F;列。</p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e949868c6e22452681b17b011ec2b18a~tplv-k3u1fbpfcp-watermark.image" alt="屏幕截图 2022-07-26 010136.png"></p>
+<blockquote>
+<p>浮动</p>
+</blockquote>
+<p>形象地来说，可以把浮动元素比作成水，其可以围绕着别的元素浮动。</p>
+<p>浮动元素还有一个重要的应用，就是在浏览器的大小不够时，浮动元素会自动调整自己的位置，以便能够全部显示出来。</p>
+<p>设置<code>float:left</code>或<code>float:right</code>后，一个浮动元素会尽量向左或向右移动，直到它的外边缘碰到包含框或另一个浮动框的边框为止。</p>
+<p>实际上有了Flex和Gred之后，可以用前两者代替很多float实现的布局效果。</p>
+<blockquote>
+<p>绝对位置</p>
+</blockquote>
+<p><code>position</code>有如下属性：</p>
+<ul>
+<li><p><code>static</code>：默认值，非定位元素</p>
+</li>
+<li><p><code>relative</code>:相对自身原本位置偏移，不脱离文档流。使用top、left、bottom、right设置偏移长度</p>
+</li>
+<li><p><code>absolute</code>:绝对定位，相对于最近的非static祖先元素（若没有定义其它任何非static元素，则根据根元素定位）定位。其脱离了常规流，不会影响其它元素的布局</p>
+</li>
+<li><p><code>fixed</code>:相对视口绝对定位。同样脱离常规流，不会影响其它元素的布局</p>
+</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>学习CSS的几点建议：充分利用<strong>MDN</strong>和<strong>W3C CSS规范</strong>，不断学习。</p>
+<p>今天的课程算是比较长的，并且干货满满，我算是重新学习了一遍CSS，又学到了很多新的知识，对CSS有了不少新的理解和体会，希望接下来的青训时光能学到更多东西，真正做到项目驱动学习，实现技术上的增长。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/08/23/%E4%BA%86%E8%A7%A3CSS/" rel="prev" title="了解CSS">
+      <i class="fa fa-chevron-left"></i> 了解CSS
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/08/23/%E5%89%8D%E7%AB%AF%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="next" title="前端设计模式">
+      前端设计模式 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E5%99%A8%E7%9A%84%E4%BC%98%E5%85%88%E6%AC%A1%E5%BA%8F"><span class="nav-number">1.</span> <span class="nav-text">选择器的优先次序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF"><span class="nav-number">2.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS%E6%B8%B2%E6%9F%93%E7%9A%84%E6%B5%81%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">CSS渲染的流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%83%E5%B1%80"><span class="nav-number">4.</span> <span class="nav-text">布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">U2y</p>
+  <div class="site-description" itemprop="description">Personal blog of U2y</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">U2y</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
