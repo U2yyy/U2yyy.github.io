@@ -20,17 +20,19 @@
     var CONFIG = {"hostname":"u2yyy.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Personal blog of U2y">
-<meta property="og:type" content="website">
-<meta property="og:title" content="U2y&#39;s blog">
-<meta property="og:url" content="https://u2yyy.github.io/archives/2022/10/index.html">
+  <meta name="description" content="8.6 工作总结从昨天开始正式接触API调用了，跟之前的难度梯度不是一个级别的，突然有大量的知识涌入 Provider管理全局信息，今早Mentor指导后用单例模式更方便的获取对象 shared_preferences在本地存储 开发API获取的服务，将网络请求和初始化等等操作都在此进行。这是最困难的一步，还好有AI辅助我进行 将API文档里面获取到的实例对象写成模型以供调用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="8.6工作总结">
+<meta property="og:url" content="https://u2yyy.github.io/2025/08/06/8-6%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="U2y&#39;s blog">
-<meta property="og:description" content="Personal blog of U2y">
+<meta property="og:description" content="8.6 工作总结从昨天开始正式接触API调用了，跟之前的难度梯度不是一个级别的，突然有大量的知识涌入 Provider管理全局信息，今早Mentor指导后用单例模式更方便的获取对象 shared_preferences在本地存储 开发API获取的服务，将网络请求和初始化等等操作都在此进行。这是最困难的一步，还好有AI辅助我进行 将API文档里面获取到的实例对象写成模型以供调用">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-08-06T02:23:53.000Z">
+<meta property="article:modified_time" content="2025-08-06T02:25:24.351Z">
 <meta property="article:author" content="U2y">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://u2yyy.github.io/archives/2022/10/">
+<link rel="canonical" href="https://u2yyy.github.io/2025/08/06/8-6%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
 
 
 <script id="page-configurations">
@@ -38,12 +40,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | U2y's blog</title>
+  <title>8.6工作总结 | U2y's blog</title>
   
 
 
@@ -141,70 +143,82 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 19 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://u2yyy.github.io/2025/08/06/8-6%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="U2y">
+      <meta itemprop="description" content="Personal blog of U2y">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="U2y's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          8.6工作总结
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-08-06 10:23:53 / 修改时间：10:25:24" itemprop="dateCreated datePublished" datetime="2025-08-06T10:23:53+08:00">2025-08-06</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-10-27T10:51:49+08:00"
-              content="2022-10-27">
-          10-27
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/10/27/%E8%BF%91%E4%B8%80%E4%B8%AA%E6%9C%88%E4%BB%A5%E6%9D%A5%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/" itemprop="url">
-            <span itemprop="name">近一个月以来的个人总结</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-10-26T11:34:12+08:00"
-              content="2022-10-26">
-          10-26
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/10/26/%E4%BB%BF%E7%BE%8A%E4%BA%86%E4%B8%AA%E7%BE%8A%E6%B8%B8%E6%88%8F/" itemprop="url">
-            <span itemprop="name">仿羊了个羊游戏</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+        <h1 id="8-6-工作总结"><a href="#8-6-工作总结" class="headerlink" title="8.6 工作总结"></a>8.6 工作总结</h1><h4 id="从昨天开始正式接触API调用了，跟之前的难度梯度不是一个级别的，突然有大量的知识涌入"><a href="#从昨天开始正式接触API调用了，跟之前的难度梯度不是一个级别的，突然有大量的知识涌入" class="headerlink" title="从昨天开始正式接触API调用了，跟之前的难度梯度不是一个级别的，突然有大量的知识涌入"></a>从昨天开始正式接触API调用了，跟之前的难度梯度不是一个级别的，突然有大量的知识涌入</h4><ul>
+<li>Provider管理全局信息，今早Mentor指导后用单例模式更方便的获取对象</li>
+<li>shared_preferences在本地存储</li>
+<li>开发API获取的服务，将网络请求和初始化等等操作都在此进行。这是最困难的一步，还好有AI辅助我进行</li>
+<li>将API文档里面获取到的实例对象写成模型以供调用</li>
+</ul>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2025/08/05/8-5%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" rel="prev" title="8.5工作总结">
+      <i class="fa fa-chevron-left"></i> 8.5工作总结
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
@@ -257,6 +271,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#8-6-%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93"><span class="nav-number">1.</span> <span class="nav-text">8.6 工作总结</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%8E%E6%98%A8%E5%A4%A9%E5%BC%80%E5%A7%8B%E6%AD%A3%E5%BC%8F%E6%8E%A5%E8%A7%A6API%E8%B0%83%E7%94%A8%E4%BA%86%EF%BC%8C%E8%B7%9F%E4%B9%8B%E5%89%8D%E7%9A%84%E9%9A%BE%E5%BA%A6%E6%A2%AF%E5%BA%A6%E4%B8%8D%E6%98%AF%E4%B8%80%E4%B8%AA%E7%BA%A7%E5%88%AB%E7%9A%84%EF%BC%8C%E7%AA%81%E7%84%B6%E6%9C%89%E5%A4%A7%E9%87%8F%E7%9A%84%E7%9F%A5%E8%AF%86%E6%B6%8C%E5%85%A5"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">从昨天开始正式接触API调用了，跟之前的难度梯度不是一个级别的，突然有大量的知识涌入</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
