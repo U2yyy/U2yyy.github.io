@@ -147,6 +147,77 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://u2yyy.github.io/2025/10/28/10-28%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="U2y">
+      <meta itemprop="description" content="Personal blog of U2y">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="U2y's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/10/28/10-28%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">10.28工作总结</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-10-28 19:35:36 / 修改时间：19:35:52" itemprop="dateCreated datePublished" datetime="2025-10-28T19:35:36+08:00">2025-10-28</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="10-28-记录"><a href="#10-28-记录" class="headerlink" title="10.28 记录"></a>10.28 记录</h1><p>已经不少天没记录自己的工作和学习进度了。今天刚好有空，总结一下。</p>
+<p>!– more –&gt;</p>
+<blockquote>
+</blockquote>
+<p>Toki虽然公测一段时间了，但是一直有各种各样的需求和bug，导致迟迟未能投放。今天又让我解决边界条件，寻求了很多办法，最后是用监听解决的，在这里也记录一下。</p>
+<p>继承RouteAware组件，即可复写didPushNext、didPopNext等多种方法，可以有效阻断用户的push和pop操作，在Widget树渲染之前进行一些操作</p>
+<p>VisibilityDetector 这个插件很不错，可以用于监听某个组件是否可见，</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">key: const Key(&#x27;match-page&#x27;),</span><br><span class="line">onVisibilityChanged: (info) &#123;</span><br><span class="line">  if (info.visibleFraction &gt; 0) &#123;</span><br><span class="line">    updateMatchInfo();</span><br><span class="line">    userProvider.getUserInfo();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<p>类似于这样的两个必填参数即可实现，有时比RouteAware更好用。</p>
+<p>现在学习效率明显不如刚来公司了，跟不少人熟络起来了，导致有不少时间花在了和产品扯皮以及解释功能，讨论要不要针对某个功能或者bug优化上面，这很不好，得想办法。</p>
+<p>交给我的新项目Gabby，前人水平很不错，让我学到了不少东西。不过他的加密思维也太重了，几乎处处要加密，这搞的很麻烦。</p>
+<p>关于RIverpod，基本上还是没怎么搞清楚，比Provider要难理解太多了，估计是牵扯到底层的东西比较多。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://u2yyy.github.io/2025/10/09/%E5%9B%BD%E5%BA%86%E6%9D%A5%E7%9A%84%E5%B0%8F%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -740,69 +811,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://u2yyy.github.io/2025/08/01/8-1%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="U2y">
-      <meta itemprop="description" content="Personal blog of U2y">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="U2y's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/08/01/8-1%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">8.1工作总结</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2025-08-01 16:08:25 / 修改时间：16:08:43" itemprop="dateCreated datePublished" datetime="2025-08-01T16:08:25+08:00">2025-08-01</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="8-1工作总结"><a href="#8-1工作总结" class="headerlink" title="8.1工作总结"></a>8.1工作总结</h1><ul>
-<li>这两天一直在封装，不停的封装，封装的时候想接口想的头大，一直在想我封装出来真的有意义吗</li>
-<li>主要封装了底部弹窗和礼物卡片</li>
-<li>下午写chat页面的时候终于用到了自己造的轮子，爽死我了</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -872,7 +880,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
