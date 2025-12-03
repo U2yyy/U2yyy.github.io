@@ -255,6 +255,13 @@
 
               <time title="创建时间：2025-12-02 19:12:38" itemprop="dateCreated datePublished" datetime="2025-12-02T19:12:38+08:00">2025-12-02</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-12-03 17:34:02" itemprop="dateModified" datetime="2025-12-03T17:34:02+08:00">2025-12-03</time>
+              </span>
 
           
 
@@ -267,7 +274,36 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
+          <h2 id="📅-date-2025-12-02-开发日志"><a href="#📅-date-2025-12-02-开发日志" class="headerlink" title="📅 date:2025-12-02 开发日志"></a>📅 date:2025-12-02 开发日志</h2><h3 id="🚀-今日进展"><a href="#🚀-今日进展" class="headerlink" title="🚀 今日进展"></a>🚀 今日进展</h3><ul>
+<li><p>上午发布后在半摸鱼半寻找好用的效率提升工具，然后找到了raycast，记日志变得更方便了</p>
+</li>
+<li><p>发现一个特别好用的圆圈头像写法：CircleAvatar,可以用radius设置半径，child里放图片就行</p>
+</li>
+<li><p>对错误捕获有了更清晰的认知：</p>
+</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">on</span> Exception <span class="keyword">catch</span> (e) —— 它是“过滤器” 当你写 <span class="keyword">on</span> Exception 时，你是在告诉 Dart：“我只抓‘异常’这一类问题，如果是代码写错了（Error），请不要拦着，让它崩溃（或者往上抛）。”  捕获范围： 仅限 Exception 类及其子类（如 TimeoutException, FormatException）。  漏网之鱼： 所有 Error 类及其子类（如 NoSuchMethodError, ArgumentError, OutOfMemoryError）。  你的 bug 就是因为这个： 你的代码发生了 NoSuchMethodError（试图对 <span class="keyword">null</span> 进行操作），这是一个 Error。 但是你的网子只抓 Exception。 于是，这个 Error 就像漏网之鱼一样，穿过了你的 <span class="keyword">try</span>-<span class="keyword">catch</span>，直接撞到了 main.dart 里的全局捕获器，导致了 Fatal Exception。  <span class="number">2</span>. <span class="keyword">catch</span> (e) —— 它是“大兜底” 当你什么都不加，直接写 <span class="keyword">catch</span> (e) 时，你是在说：“不管发生什么（无论是 Exception 还是 Error，甚至是一个 <span class="built_in">String</span>），统统给我抓住！”  捕获范围： 所有实现了 <span class="built_in">Object</span> 的东西（Dart 里万物皆对象，所以就是一切）。  漏网之鱼： 无。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>[13:52] match页面布局修复</li>
+<li>[17:03] gabby会话页面UI改动，contacts页面改动</li>
+<li>[17:36] toki错误捕获全部改为catch(e)</li>
+<li>[17:36] 修改安全关闭页面的方法</li>
+<li>[17:57] 采用退避方法重连IM通信，退避策略改写为工具类</li>
+<li>[18:13] 修改完firebase反映的bug，未找到ndk错误</li>
+<li>[18:18] 缩小视频页面关注按钮，加上震动</li>
+<li>[18:30] mark一下——destory rtc engine可能比较危险，可能是引发崩溃的罪魁祸首</li>
+<li>[18:59] 修复匹配时错误等待主播数据</li>
+</ul>
+<h3 id="🐛-遇到的问题"><a href="#🐛-遇到的问题" class="headerlink" title="🐛 遇到的问题"></a>🐛 遇到的问题</h3><ul>
+<li>firebase捕获改严格之后，上报了不少未预料到的错误，今天处理了不少</li>
+</ul>
+<h3 id="📝-明日计划"><a href="#📝-明日计划" class="headerlink" title="📝 明日计划"></a>📝 明日计划</h3><ul>
+<li>继续观察firebase数据并修复，这些错误可能并不会导致crash，但仍需注意。</li>
+<li>紧盯console数据，如有明显上升需立即撤回并修复版本</li>
+<li>继续开发gabby，把会话页面写完</li>
+</ul>
+
       
     </div>
 
