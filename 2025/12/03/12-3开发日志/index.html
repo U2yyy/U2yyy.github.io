@@ -20,17 +20,19 @@
     var CONFIG = {"hostname":"u2yyy.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Personal blog of U2y">
-<meta property="og:type" content="website">
-<meta property="og:title" content="U2y&#39;s blog">
-<meta property="og:url" content="https://u2yyy.github.io/archives/page/2/index.html">
+  <meta name="description" content="📅 2025-12-03 开发日志🚀 今日进展 [10:26] 用Charles 的Throttle preset模拟弱网 [10:45] 设置加载数据超时操作 [10:54] 修复相机权限调用 [11:09] 修复初始化引擎逻辑 [11:19] 修复举报中文本的光标重置问题 [11:22] 修复客服中心的一个空值误用 [11:26] 修复不正确使用setState的问题 [11:44] 修复">
+<meta property="og:type" content="article">
+<meta property="og:title" content="12.3开发日志">
+<meta property="og:url" content="https://u2yyy.github.io/2025/12/03/12-3%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/index.html">
 <meta property="og:site_name" content="U2y&#39;s blog">
-<meta property="og:description" content="Personal blog of U2y">
+<meta property="og:description" content="📅 2025-12-03 开发日志🚀 今日进展 [10:26] 用Charles 的Throttle preset模拟弱网 [10:45] 设置加载数据超时操作 [10:54] 修复相机权限调用 [11:09] 修复初始化引擎逻辑 [11:19] 修复举报中文本的光标重置问题 [11:22] 修复客服中心的一个空值误用 [11:26] 修复不正确使用setState的问题 [11:44] 修复">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-12-03T09:32:49.000Z">
+<meta property="article:modified_time" content="2025-12-03T09:33:15.949Z">
 <meta property="article:author" content="U2y">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://u2yyy.github.io/archives/page/2/">
+<link rel="canonical" href="https://u2yyy.github.io/2025/12/03/12-3%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/">
 
 
 <script id="page-configurations">
@@ -38,12 +40,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | U2y's blog</title>
+  <title>12.3开发日志 | U2y's blog</title>
   
 
 
@@ -141,237 +143,101 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 29 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://u2yyy.github.io/2025/12/03/12-3%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="U2y">
+      <meta itemprop="description" content="Personal blog of U2y">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="U2y's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          12.3开发日志
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-12-03 17:32:49 / 修改时间：17:33:15" itemprop="dateCreated datePublished" datetime="2025-12-03T17:32:49+08:00">2025-12-03</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2025</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2025-08-06T10:23:53+08:00"
-              content="2025-08-06">
-          08-06
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/08/06/8-6%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" itemprop="url">
-            <span itemprop="name">8.6工作总结</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2025-08-05T09:28:11+08:00"
-              content="2025-08-05">
-          08-05
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/08/05/8-5%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" itemprop="url">
-            <span itemprop="name">8.5工作总结</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2025-08-01T16:08:25+08:00"
-              content="2025-08-01">
-          08-01
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/08/01/8-1%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" itemprop="url">
-            <span itemprop="name">8.1工作总结</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2025-07-31T13:48:37+08:00"
-              content="2025-07-31">
-          07-31
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/07/31/7-31%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" itemprop="url">
-            <span itemprop="name">7.31工作总结</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2025-07-30T15:59:40+08:00"
-              content="2025-07-30">
-          07-30
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/07/30/7-30%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" itemprop="url">
-            <span itemprop="name">7.30工作总结</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2025-07-29T10:24:43+08:00"
-              content="2025-07-29">
-          07-29
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/07/29/7-29%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" itemprop="url">
-            <span itemprop="name">7.29工作总结</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2025-07-26T14:36:27+08:00"
-              content="2025-07-26">
-          07-26
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/07/26/7-25%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" itemprop="url">
-            <span itemprop="name">7.25工作总结</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2025-07-24T10:30:08+08:00"
-              content="2025-07-24">
-          07-24
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/07/24/7-24%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" itemprop="url">
-            <span itemprop="name">7.24工作总结</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2025-07-24T10:07:20+08:00"
-              content="2025-07-24">
-          07-24
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/07/24/%E8%BD%AC%E8%A1%8C%E6%88%90%E5%8A%9F%EF%BC%81%E5%89%8D%E4%B8%A4%E5%A4%A9%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" itemprop="url">
-            <span itemprop="name">转行成功！前两天的工作总结</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-10-27T10:51:49+08:00"
-              content="2022-10-27">
-          10-27
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/10/27/%E8%BF%91%E4%B8%80%E4%B8%AA%E6%9C%88%E4%BB%A5%E6%9D%A5%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/" itemprop="url">
-            <span itemprop="name">近一个月以来的个人总结</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+        <h2 id="📅-2025-12-03-开发日志"><a href="#📅-2025-12-03-开发日志" class="headerlink" title="📅 2025-12-03 开发日志"></a>📅 2025-12-03 开发日志</h2><h3 id="🚀-今日进展"><a href="#🚀-今日进展" class="headerlink" title="🚀 今日进展"></a>🚀 今日进展</h3><ul>
+<li>[10:26] 用Charles 的Throttle preset模拟弱网</li>
+<li>[10:45] 设置加载数据超时操作</li>
+<li>[10:54] 修复相机权限调用</li>
+<li>[11:09] 修复初始化引擎逻辑</li>
+<li>[11:19] 修复举报中文本的光标重置问题</li>
+<li>[11:22] 修复客服中心的一个空值误用</li>
+<li>[11:26] 修复不正确使用setState的问题</li>
+<li>[11:44] 修复压缩图片逻辑</li>
+<li>[11:55] 修复图链错误的错误捕获</li>
+<li>[14:05] 不再在初始化用户数据失败时自动登出</li>
+<li>[16:31] 用eventBus移除matching和autocall</li>
+<li>[17:29] 修复部分国际化镜像问题</li>
+</ul>
+<h3 id="🐛-遇到的问题"><a href="#🐛-遇到的问题" class="headerlink" title="🐛 遇到的问题"></a>🐛 遇到的问题</h3><ul>
+<li>匹配使用率下滑明显，未能找到原因</li>
+<li>异常匹配次数明显上升，已经定位，应该是不正确的网络请求等待引起的</li>
+<li>匹配页面，获取参数似乎有问题，更新不太及时</li>
+</ul>
+<h3 id="📝-明日计划"><a href="#📝-明日计划" class="headerlink" title="📝 明日计划"></a>📝 明日计划</h3><ul>
+<li>找亚男解决匹配使用率下滑的问题</li>
+<li>修复匹配页面的参数获取问题</li>
+<li>发布1.2.5，观察指标</li>
+</ul>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2025/12/02/12-2%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" rel="prev" title="12.2工作总结">
+      <i class="fa fa-chevron-left"></i> 12.2工作总结
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
   
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
+  
+  
 
 
 
@@ -423,6 +289,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%93%85-2025-12-03-%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97"><span class="nav-number">1.</span> <span class="nav-text">📅 2025-12-03 开发日志</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%9A%80-%E4%BB%8A%E6%97%A5%E8%BF%9B%E5%B1%95"><span class="nav-number">1.1.</span> <span class="nav-text">🚀 今日进展</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%90%9B-%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">1.2.</span> <span class="nav-text">🐛 遇到的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%9D-%E6%98%8E%E6%97%A5%E8%AE%A1%E5%88%92"><span class="nav-number">1.3.</span> <span class="nav-text">📝 明日计划</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
